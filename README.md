@@ -6,15 +6,11 @@
 ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue) [![Made with Python](https://img.shields.io/badge/Python->=3.6-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage") 
 
 boxpyShell is a shell i made.
-It has both CLI and GUI (as of update 1.5.2022 (the .5 is the build, i lost count)).
+# TI-84 Plus CE Python Edition Build
+Built and made specifically for it! (might be limited in terms of libraries and functions)
 
 # CLI
 Every command is CaSe SeNsItIvE!
-Help commands are written in txt files! It has games, tools and a screen creator!
 
-# GUI
-## New as of 1.5.11.22!
-
-You can easily exit without having to wait! (KeyboardInterrupt is still an option)
-Clear the shell window (Is this the "Adam Task" from TempleOs? (massive inspiration from there!!))
-Print Hello World! and tell (bad) jokes!
+# Other
+This build will be avaiable on [Cemetech.net](https://www.cemetech.net)
