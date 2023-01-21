@@ -3,13 +3,15 @@ import sys
 import time
 from extShellData import *
 from nbdpy import *
+from os import getlogin
 # from userLogon import *
 
+OSNAME = os.getlogin()
 printStuffpc = True
 printStuff = True
 run = True
 cmdTagSuffix = ""
-cmdTagPrefix = "@boxpyshell $~: "
+cmdTagPrefix = f"{OSNAME}@boxpyshell $~: "
 cmdTagFull = str(cmdTagSuffix + cmdTagPrefix)
 config = ConfigParser()
 config.read("config/main.ini")
@@ -18,7 +20,7 @@ try:
     config_data1 = str(config["DEBUG"]["noloading"])
     print(config_data1)
     if config_data1 == "false":
-        animlib.loadingAnim("load",5)
+        animlib.loadingAnim("load", 5)
     elif config_data1 == "true":
         print("skipped animlib")
         debugMode = True
@@ -59,34 +61,28 @@ while run == True:
         typeHelp = input()
 
         if typeHelp == "basic":
-            file_path = 'data/help.txt'
-            with open(file_path) as file:
+            with open('data/help.txt', "r", "utf-8") as file:
                 print(file.read())
 
         elif typeHelp == "ext1":
-            file_path = 'data/hpc.txt'
-            with open(file_path) as file:
+            with open("data/hpc.txt", "r", "utf-8") as file:
                 print(file.read())
 
         elif typeHelp == "ext2":
-            file_path = 'data/hpg.txt'
-            with open(file_path) as file:
+            with open("data/hpg.txt", "r", "utf-8") as file:
                 print(file.read())
 
         continue
 
     elif command == "readEX":
-        file_pathEX = 'data/helloworld.txt'
-        print('This is just a demonstration of the reading ability of boxpyshell')
-        print("Please wait...")
+        print('This is just a demonstration of the reading ability of boxpyshell\nPlease wait...')
         animlib.loadingAnim("load",2)
         spamClear()
-        with open(file_pathEX) as file:
+        with open("data/helloworld.txt", "r", "utf-8") as file:
             print(file.read())           
 
     elif command == "source":
-        file_pathSource = "data/source.txt"
-        with open(file_pathSource) as file:
+        with open("data/source.txt", "r", "utf-8") as file:
             print(file.read())
 
     elif command == "screenCreate":
@@ -136,7 +132,7 @@ while run == True:
     #elif command == "createFile":
      #   os.
 
-    elif command == "quit" or command == "exit":
+    elif command in ("quit", "exit"):
         animlib.loadingAnim("exit",5)
         print("terminated main task. exit")
         sys.exit()
